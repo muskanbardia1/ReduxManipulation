@@ -3,6 +3,7 @@ import Restaurants from "../db/restaurants.json";
 export const GET_CUISINES = "GET_CUISINES";
 export const GET_RESTAURANT = "GET_RESTAURANT";
 export const GET_CHECKED = "GET_CHECKED";
+export const GET_FILTERED = "GET_FILTERED";
 
 export const cuisineFile = () => {
   return async (dispatch) => {
@@ -21,5 +22,11 @@ export const restaurantFile = () => {
 export const checkCategory = (data) => {
   return async (dispatch) => {
     dispatch({ type: GET_CHECKED, payload: data });
+  };
+};
+
+export const filteredData = (data) => {
+  return async (dispatch) => {
+    dispatch({ type: GET_FILTERED, payload: data });
   };
 };

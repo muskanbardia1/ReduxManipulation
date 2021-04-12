@@ -1,9 +1,15 @@
-import { GET_CUISINES, GET_RESTAURANT, GET_CHECKED } from "./actions";
+import {
+  GET_CUISINES,
+  GET_RESTAURANT,
+  GET_CHECKED,
+  GET_FILTERED,
+} from "./actions";
 
 const initialState = {
   cuisinFile: null,
   restaurantFile: null,
   checked: null,
+  filtered: null,
 };
 
 export default function (state = initialState, action) {
@@ -22,6 +28,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         checked: action.payload,
+      };
+    case GET_FILTERED:
+      return {
+        ...state,
+        filtered: action.payload,
       };
     default:
       return state;
